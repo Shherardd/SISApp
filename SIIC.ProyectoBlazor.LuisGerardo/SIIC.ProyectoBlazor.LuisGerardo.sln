@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30517.126
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIIC.ProyectoBlazor.LuisGerardo", "SIIC.ProyectoBlazor.LuisGerardo\SIIC.ProyectoBlazor.LuisGerardo.csproj", "{6972F57B-AD38-4A80-A41B-8C59CD5A199B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SIIC.ProyectoBlazor.LuisGerardo", "SIIC.ProyectoBlazor.LuisGerardo.csproj", "{F48BDEA4-D863-46A0-BB2B-00EB7FC981EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6972F57B-AD38-4A80-A41B-8C59CD5A199B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6972F57B-AD38-4A80-A41B-8C59CD5A199B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6972F57B-AD38-4A80-A41B-8C59CD5A199B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6972F57B-AD38-4A80-A41B-8C59CD5A199B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F48BDEA4-D863-46A0-BB2B-00EB7FC981EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F48BDEA4-D863-46A0-BB2B-00EB7FC981EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F48BDEA4-D863-46A0-BB2B-00EB7FC981EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F48BDEA4-D863-46A0-BB2B-00EB7FC981EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {CD5B227F-9284-4D4E-ACD2-3C635975312C}
+		SolutionGuid = {53F63575-278C-4997-A631-8DC7F294D01C}
 	EndGlobalSection
 EndGlobal
