@@ -1,0 +1,34 @@
+﻿@page "/empresas"
+<h3>Empresas</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellidos</th>
+            <th>Direccion</th>
+            <th>Correo</th>
+            <th>Telefono</th>
+            <th>Editar</th>
+            <th>Eliminar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var e in listaEmpresas)
+        {
+            <tr>
+                <td>@e.Id</td>
+                <td>kk</td>
+                <td>kk</td>
+                <td>@e.Direccion</td>
+                <td>@e.Correo</td>
+                <td>@e.Telefono</td>
+                <td><button type="button" class="btn btn-info" >Editar</button></td>
+                <td><button type="button" class="btn btn-danger">Eliminar</button></td>
+
+            </tr>
+        }
+    </tbody>
+</table>

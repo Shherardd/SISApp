@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using SIIC.ProyectoBlazor.LuisGerardo.APIClient.WebClient;
+using SIIC.ProyectoBlazor.LuisGerardo.BL;
 
 namespace SIIC.ProyectoBlazor.LuisGerardo
 {
@@ -18,6 +20,9 @@ namespace SIIC.ProyectoBlazor.LuisGerardo
             builder.RootComponents.Add<App>("app");
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            builder.Services.AddTransient(s => new EmpresasAPI("https://tiendablazor.azurewebsites.net/"));
+            builder.Services.AddTransient<EmpresasBL>();
+
 
             await builder.Build().RunAsync();
         }

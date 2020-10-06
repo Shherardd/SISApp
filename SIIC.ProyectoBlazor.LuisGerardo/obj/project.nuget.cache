@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Hv0k3zxMlSqyvRWxFK0Ntz3Eoejyd/XwgdCGQFeDiMT6cMkkRXAOkPKWbqkCJj9T9cG3PbU3g+QoJKojzN82aA==",
+  "dgSpecHash": "Ffrsl49nXLIjh2idSQKfleBvFy+eJ6YX1eOBK1n5udbHME9HsR2IbIF/FPeaxVreUmaEzyPqEefRqbqZ48Z3oQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Sherard\\Desktop\\Apps\\SISApp\\SIIC.ProyectoBlazor.LuisGerardo\\SIIC.ProyectoBlazor.LuisGerardo.csproj",
   "expectedPackageFiles": [
@@ -32,6 +32,7 @@
     "C:\\Users\\Sherard\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.6\\microsoft.extensions.primitives.3.1.6.nupkg.sha512",
     "C:\\Users\\Sherard\\.nuget\\packages\\microsoft.jsinterop\\3.1.6\\microsoft.jsinterop.3.1.6.nupkg.sha512",
     "C:\\Users\\Sherard\\.nuget\\packages\\microsoft.jsinterop.webassembly\\3.2.1\\microsoft.jsinterop.webassembly.3.2.1.nupkg.sha512",
+    "C:\\Users\\Sherard\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\Sherard\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\Sherard\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
     "C:\\Users\\Sherard\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
