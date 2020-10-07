@@ -56,7 +56,7 @@ namespace SIIC.ProyectoBlazor.LuisGerardo.APIClient.WebClient
         {
             try
             {
-                var resultado = await this.PostAsJsonAsync("ActualizarEmpresa", empresa);
+                var resultado = await this.PostAsJsonAsync("ActualizarEmpresa", empresa); // Razon social llega, pero no se edita en la API
                 if (resultado.IsSuccessStatusCode)
                 {
                     var httpRes = resultado.Content.ReadAsStringAsync().Result;
