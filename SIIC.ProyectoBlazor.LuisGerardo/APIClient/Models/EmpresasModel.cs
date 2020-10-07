@@ -15,8 +15,5 @@ namespace SIIC.ProyectoBlazor.LuisGerardo.APIClient.Models
         public String Direccion { get; set; }
         public String Telefono { get; set; }
         public String Correo { get; set; }
-        public String idSucursalNavigation { get; set; }
-        public String[] empleados { get; set; }
-        public String[] InverseIdSucursalNavigation { get; set; }
     }
 }

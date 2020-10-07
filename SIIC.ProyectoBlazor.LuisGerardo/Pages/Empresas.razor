@@ -1,34 +1,62 @@
 ﻿@page "/empresas"
 <h3>Empresas</h3>
-
-<table class="table">
-    <thead>
-        <tr>
-
-            <th>Id</th>
-            <th>Nombre</th>
-            <th>Apellidos</th>
-            <th>Direccion</th>
-            <th>Correo</th>
-            <th>Telefono</th>
-            <th>Editar</th>
-            <th>Eliminar</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var e in listaEmpresas)
-        {
+<div class="justify-content-center">
+    <button type="button" class="btn btn-success  mb-5" @onclick="nuevaEmpresa">Agregar Empresa</button>
+    <table class="table table-hover">
+        <thead class="thead-dark">
             <tr>
-                <td>@e.Id</td>
-                <td>kk</td>
-                <td>kk</td>
-                <td>@e.Direccion</td>
-                <td>@e.Correo</td>
-                <td>@e.Telefono</td>
-                <td><button type="button" class="btn btn-info" >Editar</button></td>
-                <td><button type="button" class="btn btn-danger">Eliminar</button></td>
 
+                <th>Id</th>
+                <th>Nombre Comercial</th>
+                <th>Razon Social</th>
+                <th>Rfc</th>
+                <th>Direccion</th>
+                <th>Correo</th>
+                <th>Telefono</th>
+                <th>Acciones</th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var e in listaEmpresas)
+            {
+                <tr>
+                    <td>@e.Id</td>
+                    <td>@e.NombreComercial</td>
+                    <td>@e.RazonSocial</td>
+                    <td>@e.Rfc</td>
+                    <td>@e.Direccion</td>
+                    <td>@e.Correo</td>
+                    <td>@e.Telefono</td>
+                    <td>
+                        <button type="button" class="btn btn-info" @onclick="() => autoCompletar(e)"><span class="oi oi-pencil" aria-hidden="true"></span></button>
+                        <button type="button" class="btn btn-danger"><span class="oi oi-x" aria-hidden="true"></span></button>
+                    </td>
+
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+
+<div>
+    <label>Nombre Comercial</label>
+    <input type="text" @bind="Empresa.NombreComercial" />
+    <label>Razon social</label>
+    <input type="text" @bind="Empresa.RazonSocial" />
+    <label>Rfc</label>
+    <input type="text" @bind="Empresa.Rfc" />
+    <label>Direccion</label>
+    <input type="text" @bind="Empresa.Direccion" />
+    <label>Telefono</label>
+    <input type="text" @bind="Empresa.Telefono" />
+    <label>Correo</label>
+    <input type="text" @bind="Empresa.Correo" />
+    <label>idSucursal</label>
+    <input type="text" @bind="Empresa.IdSucursal" />
+
+
+    <button type="button" class="btn btn-primary" @onclick="agregarEmpresa">Guarda Empresa</button>
+</div>
+

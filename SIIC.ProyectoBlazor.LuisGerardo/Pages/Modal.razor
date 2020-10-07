@@ -1,0 +1,13 @@
+﻿<h3>Modal</h3>
+
+@foreach (var e in listaEmpleadosModal)
+{
+    <p>@e.Nombre</p>
+}
+
+@code {
+
+    [Parameter]
+    public List<SIIC.ProyectoBlazor.LuisGerardo.APIClient.Models.EmpleadosModel> listaEmpleadosModal { get; set; } = new List<APIClient.Models.EmpleadosModel>();
+
+}

@@ -26,17 +26,67 @@ namespace SIIC.ProyectoBlazor.LuisGerardo.APIClient.WebClient
             {
                 List<EmpresasModel> Lista = new List<EmpresasModel>();
                 Lista = await this.GetFromJsonAsync<List<EmpresasModel>>("ObtenerEmpresas");
-
-                var Lista2 = Lista;
-
-
-
                 return Lista;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
                 return new List<EmpresasModel>();
+                throw;
+            }
+        }
+
+        public async Task<bool> AgregarEmpresasAsync(EmpresasModel empresa) {
+            try {                
+                var resultado = await this.PostAsJsonAsync("GuardarEmpresa", empresa);
+                if (resultado.IsSuccessStatusCode) {
+                    var httpRes = resultado.Content.ReadAsStringAsync().Result;
+                    var res = JsonConvert.DeserializeObject<bool>(httpRes);
+                    return res;
+                }
+                return false;
+            } catch (Exception ex) {
+                Console.WriteLine(ex.Message);
+                return false;
+                throw;
+            }
+        }
+
+        public async Task<bool> actualizarEmpresasAsync(EmpresasModel empresa) 
+        {
+            try
+            {
+                var resultado = await this.PostAsJsonAsync("ActualizarEmpresa", empresa);
+                if (resultado.IsSuccessStatusCode)
+                {
+                    var httpRes = resultado.Content.ReadAsStringAsync().Result;
+                    var res = JsonConvert.DeserializeObject<bool>(httpRes);
+                    return res;
+                } return false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+                throw;
+            }           
+        }
+
+        public async Task<bool> eliminarEmpresasAsync(Guid idEmpresa) {
+            try
+            {
+                var resultado = await this.PostAsJsonAsync("EliminarEmpresa", idEmpresa);
+                if (resultado.IsSuccessStatusCode)
+                {
+                    var httpRes = resultado.Content.ReadAsStringAsync().Result;
+                    var res = JsonConvert.DeserializeObject<bool>(httpRes);
+                    return res;
+                }return false;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
                 throw;
             }
         }
