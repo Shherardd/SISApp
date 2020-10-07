@@ -61,6 +61,7 @@ namespace SIIC.ProyectoBlazor.LuisGerardo.APIClient.WebClient
                 {
                     var httpRes = resultado.Content.ReadAsStringAsync().Result;
                     var res = JsonConvert.DeserializeObject<bool>(httpRes);
+                    Console.WriteLine(resultado.Content.ReadAsStringAsync().Result);
                     return res;
                 } return false;
             }

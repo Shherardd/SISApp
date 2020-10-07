@@ -29,7 +29,7 @@
                     <td>@e.Telefono</td>
                     <td>
                         <button type="button" class="btn btn-info" @onclick="() => autoCompletar(e)"><span class="oi oi-pencil" aria-hidden="true"></span></button>
-                        <button type="button" class="btn btn-danger"><span class="oi oi-x" aria-hidden="true"></span></button>
+                        <button type="button" class="btn btn-danger" @onclick="() => eliminarEmpresa(e)"><span class="oi oi-x" aria-hidden="true"></span></button>
                     </td>
 
 
@@ -58,5 +58,8 @@
 
 
     <button type="button" class="btn btn-primary" @onclick="agregarEmpresa">Guarda Empresa</button>
+    <button type="button" class="btn btn-primary" @onclick="ActualizarEmpresa">Actualizar Empresa</button>
 </div>
-
+@if (isOpen) { 
+<EmpresasForm Empresa=Empresa Accion=accion></EmpresasForm>
+}

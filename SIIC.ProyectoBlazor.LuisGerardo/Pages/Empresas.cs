@@ -20,6 +20,8 @@ namespace SIIC.ProyectoBlazor.LuisGerardo.Pages
         public EmpresasModel Empresa { get; set; } = new EmpresasModel();
         [Parameter]
         public bool isOpen { get; set; }
+        [Parameter]
+        public String accion { get; set; }
         [Inject]
         private EmpresasBL EmpresasBL { get; set; }
 
@@ -30,7 +32,20 @@ namespace SIIC.ProyectoBlazor.LuisGerardo.Pages
 
         public async Task agregarEmpresa()
         {
+            //Empresa.IdSucursal = new Guid();
             await EmpresasBL.AgregarEmpresasAsync(Empresa);
+        }
+
+        private async Task ActualizarEmpresa()
+        {
+            await EmpresasBL.ActualizarEmpresasAsync(Empresa);
+            await ObtenerEmpresas();
+        }
+
+        private async Task eliminarEmpresa(EmpresasModel empresa)
+        {
+            await EmpresasBL.EliminarEmpresasAsync(empresa);
+            await ObtenerEmpresas();
         }
 
         public void autoCompletar(EmpresasModel empresa) {
@@ -39,6 +54,8 @@ namespace SIIC.ProyectoBlazor.LuisGerardo.Pages
 
         public void nuevaEmpresa() {
             Empresa = new EmpresasModel();
+            isOpen = true;
+            accion = "agregar";
         }
 
         public void switchModal() {

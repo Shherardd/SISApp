@@ -1,0 +1,43 @@
+﻿<h3>EmpresasForm</h3>
+
+<div>
+    <label>Nombre Comercial</label>
+    <input type="text" @bind="Empresa.NombreComercial" />
+    <label>Razon social</label>
+    <input type="text" @bind="Empresa.RazonSocial" />
+    <label>Rfc</label>
+    <input type="text" @bind="Empresa.Rfc" />
+    <label>Direccion</label>
+    <input type="text" @bind="Empresa.Direccion" />
+    <label>Telefono</label>
+    <input type="text" @bind="Empresa.Telefono" />
+    <label>Correo</label>
+    <input type="text" @bind="Empresa.Correo" />
+    <label>idSucursal</label>
+    <input type="text" @bind="Empresa.IdSucursal" />
+
+
+    <button type="button" class="btn btn-primary" @onclick="agregarEmpresa">Guarda Empresa</button>
+</div>
+
+@if (code == 201) { <p>Agregado!</p>}
+@if (code == 404) { <p>Error al agregar</p>}
+
+@code {
+    [Inject]
+    private SIIC.ProyectoBlazor.LuisGerardo.BL.EmpresasBL EmpresasBL { get; set; }
+    [Parameter]
+    public SIIC.ProyectoBlazor.LuisGerardo.APIClient.Models.EmpresasModel Empresa { get; set; } = new APIClient.Models.EmpresasModel();
+    [Parameter]
+    public int code { get; set; }
+    [Parameter]
+    public String Accion { get; set; }
+
+    public async Task agregarEmpresa() {
+        var res = await EmpresasBL.AgregarEmpresasAsync(Empresa);
+        if (res) {
+            code = 201;
+        }else { code = 404; }
+        // Si la API devolviera HttpResponse seria mas facil implementar validaciones en funcion del codigo de respuesta.
+    }
+}
