@@ -21,7 +21,7 @@ namespace SIIC.ProyectoBlazor.LuisGerardo.APIClient.WebClient
             try
             {
                 List<EmpleadosModel> Lista = new List<EmpleadosModel>();
-                Lista = await this.GetFromJsonAsync<List<EmpleadosModel>>("ObtenerEmpleado");
+                Lista = await this.GetFromJsonAsync<List<EmpleadosModel>>("ObtenerEmpleados");
                 return Lista;
             }
             catch (Exception ex)
@@ -32,7 +32,7 @@ namespace SIIC.ProyectoBlazor.LuisGerardo.APIClient.WebClient
             }
         }
 
-        public async Task<bool> agregarEmpleadoAsync(EmpleadosModel empleado) {
+        public async Task<bool> AgregarEmpleadoAsync(EmpleadosModel empleado) {
             try
             {
                 var resultado = await this.PostAsJsonAsync("GuardarEmpleado", empleado);
@@ -49,7 +49,7 @@ namespace SIIC.ProyectoBlazor.LuisGerardo.APIClient.WebClient
             }
         }
 
-        public async Task<bool> actualizarEmpleadoAsync(EmpleadosModel empleado)
+        public async Task<bool> ActualizarEmpleadoAsync(EmpleadosModel empleado)
         {
             try
             {
@@ -69,10 +69,10 @@ namespace SIIC.ProyectoBlazor.LuisGerardo.APIClient.WebClient
             }
         }
 
-        public async Task<bool> eliminarEmpleadoAsync(Guid idEmpleado) {
+        public async Task<bool> EliminarEmpleadoAsync(Guid idEmpleado) {
             try
             {
-                var resultado = await this.PostAsJsonAsync("", idEmpleado);
+                var resultado = await this.PostAsJsonAsync("EliminarEmpleado", idEmpleado);
                 if (resultado.IsSuccessStatusCode) {
                     var httpRes = resultado.Content.ReadAsStringAsync().Result;
                     var res = JsonConvert.DeserializeObject<bool>(httpRes);

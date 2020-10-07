@@ -1,27 +1,38 @@
-﻿<h3>EmpresasForm</h3>
+﻿<div class=" bg-white mx-5 rounded p-5">
+<h3 class="mb-3">@Accion Empresa @Empresa.NombreComercial</h3>
+    <br />
+<form>
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label>Nombre Comercial</label>
+            <input type="text" class="form-control" @bind="Empresa.NombreComercial">
+        </div>
+        <div class="form-group col-md-6">
+            <label>Razon Social</label>
+            <input type="text" class="form-control" @bind="Empresa.RazonSocial" >
+        </div>
+    </div>
 
-<div>
-    <label>Nombre Comercial</label>
-    <input type="text" @bind="Empresa.NombreComercial" />
-    <label>Razon social</label>
-    <input type="text" @bind="Empresa.RazonSocial" />
     <label>Rfc</label>
-    <input type="text" @bind="Empresa.Rfc" />
+    <input type="text" class="form-control" @bind="Empresa.Rfc" />
     <label>Direccion</label>
-    <input type="text" @bind="Empresa.Direccion" />
+    <input type="text" class="form-control" @bind="Empresa.Direccion" />
     <label>Telefono</label>
-    <input type="text" @bind="Empresa.Telefono" />
+    <input type="text" class="form-control" @bind="Empresa.Telefono" />
     <label>Correo</label>
-    <input type="text" @bind="Empresa.Correo" />
-    <label>idSucursal</label>
-    <input type="text" @bind="Empresa.IdSucursal" />
+    <input type="text" class="form-control mb-2" @bind="Empresa.Correo" />
 
+    <div class="mb-4 border"></div>
+    @if (Accion == "Agregar")
+    {<button type="button" class="btn btn-primary float-left" @onclick="agregarEmpresa">Agregar Empresa</button> }
+    else {<button type="button" class="btn btn-primary float-left" @onclick="actualizarEmpresa">Actualizar Empresa</button> }
+    
+</form>
 
-    <button type="button" class="btn btn-primary" @onclick="agregarEmpresa">Guarda Empresa</button>
+@if (code == 201) { <p class="text-success">Agregado!</p>}
+@if (code == 404) { <p class="text-danger">Error al agregar :(</p>}
+
 </div>
-
-@if (code == 201) { <p>Agregado!</p>}
-@if (code == 404) { <p>Error al agregar</p>}
 
 @code {
     [Inject]
@@ -38,6 +49,18 @@
         if (res) {
             code = 201;
         }else { code = 404; }
+        Empresa = new APIClient.Models.EmpresasModel();
         // Si la API devolviera HttpResponse seria mas facil implementar validaciones en funcion del codigo de respuesta.
     }
+    public async Task actualizarEmpresa()
+    {
+        var res = await EmpresasBL.ActualizarEmpresasAsync(Empresa);
+        if (res)
+        {
+            code = 201;
+        }
+        else { code = 404; }
+        // Si la API devolviera HttpResponse seria mas facil implementar validaciones en funcion del codigo de respuesta.
+    }
+
 }

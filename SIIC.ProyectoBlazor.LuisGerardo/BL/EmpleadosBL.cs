@@ -22,19 +22,19 @@ namespace SIIC.ProyectoBlazor.LuisGerardo.BL
 
         public async Task<bool> AgregarEmpleadosAsync(EmpleadosModel empleado)
         {
-            var agrego = await empleadosAPI.agregarEmpleadoAsync(empleado);
+            var agrego = await empleadosAPI.AgregarEmpleadoAsync(empleado);
             return agrego;
         }
 
         public async Task<bool> ActualizarEmpleadosAsync(EmpleadosModel empleado)
         {
-            var actualizo = await empleadosAPI.agregarEmpleadoAsync(empleado);
+            var actualizo = await empleadosAPI.ActualizarEmpleadoAsync(empleado);
             return actualizo;
         }
 
         public async Task<bool> EliminarEmpleadosAsync (EmpleadosModel empleado)
         {
-            var elimino = await empleadosAPI.eliminarEmpleadoAsync(empleado.Id);
+            var elimino = await empleadosAPI.EliminarEmpleadoAsync(empleado.Id);
             return elimino;
         }
     }
