@@ -20,12 +20,12 @@
     <label>Telefono</label>
     <input type="text" class="form-control" @bind="Empresa.Telefono" />
     <label>Correo</label>
-    <input type="text" class="form-control mb-2" @bind="Empresa.Correo" />
+    <input type="text" class="form-control mb-3" @bind="Empresa.Correo" />
 
     <div class="mb-4 border"></div>
     @if (Accion == "Agregar")
-    {<button type="button" class="btn btn-primary float-left" @onclick="agregarEmpresa">Agregar Empresa</button> }
-    else {<button type="button" class="btn btn-primary float-left" @onclick="actualizarEmpresa">Actualizar Empresa</button> }
+    {<button type="button" class="btn btn-primary float-right mb-3" @onclick="agregarEmpresa">Agregar Empresa</button> }
+    else {<button type="button" class="btn btn-primary float-right mb-3" @onclick="actualizarEmpresa">Actualizar Empresa</button> }
     
 </form>
 

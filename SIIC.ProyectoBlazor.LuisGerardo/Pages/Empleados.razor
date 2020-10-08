@@ -1,7 +1,10 @@
 ﻿@page "/empleados"
-<h3>Empleados</h3>
+
+
 <div class="justify-content-center flex-column align-content-between">
+    <h2>Empleados</h2>
     <button type="button" class="btn btn-success mb-5" @onclick="NuevoEmpleado">Agregar Empleado</button>
+    <button type="button" class="btn btn-outline-info mb-5" @onclick="ObtenerEmpleados"><span class="oi oi-loop-circular"></span>Actualizar</button>
     @if (isOpen)
     {<div class="position-absolute" style="z-index:8; min-width:1000px; top:10%; left:25%;">
             <button class="float-right btn btn-danger" @onclick=switchModal style="position:relative; top:-20px; right:20px; z-index:10;">X</button>
@@ -44,23 +47,4 @@
             }
         </tbody>
     </table>
-</div>
-
-<div>
-    <label>Nombre</label>
-    <input type="text" @bind="empleado.Nombre" />
-    <label>Apellidos</label>
-    <input type="text" @bind="empleado.Apellidos" />
-    <label>Rfc</label>
-    <input type="text" @bind="empleado.Rfc" />
-    <label>Direccion</label>
-    <input type="text" @bind="empleado.Direccion" />
-    <label>Telefono</label>
-    <input type="text" @bind="empleado.Telefono" />
-    <label>Correo</label>
-    <input type="text" @bind="empleado.Correo" />
-
-
-    <button type="button" class="btn btn-primary" @onclick="AgregarEmpleados">Guarda Empleado</button>
-    <button type="button" class="btn btn-primary" @onclick="ActualizarEmpleado">Actualizar Empleado</button>
 </div>

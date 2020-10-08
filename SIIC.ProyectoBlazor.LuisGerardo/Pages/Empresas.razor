@@ -1,10 +1,11 @@
 ﻿@page "/empresas"
 
 <div>
-    <h3 class="mb-2">Empresas</h3>
+    <h2 class="mb-2">Empresas</h2>
     <button type="button" class="btn btn-success  mb-5" @onclick="nuevaEmpresa">Agregar Empresa</button>
+    <button type="button" class="btn btn-outline-info mb-5" @onclick="ObtenerEmpresas"><span class="oi oi-loop-circular"></span> Actualizar</button>
     @if (isOpen)
-    {   <div class="position-absolute" style="z-index:8; min-width:1000px; top:10%; left:25%;">
+    {<div class="position-absolute" style="z-index:8; min-width:1000px; top:10%; left:25%;">
             <button class="float-right btn btn-danger" @onclick=switchModal style="position:relative; top:-20px; right:20px; z-index:10;">X</button>
             <EmpresasForm Empresa=Empresa Accion=@Accion></EmpresasForm>
         </div>
